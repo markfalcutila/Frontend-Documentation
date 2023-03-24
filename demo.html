@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>training</title>
+    <link rel="stylesheet" href="demo-style.css" />
+    <link rel="stylesheet" href="report-editor-style.css" />
+  </head>
+  <body>
+   <div class="page">
+        <div class="header border-red">
+            <h2>ACCULAB</h2>
+            <div class="div2 border-black">
+             patient:nmae
+             nmae
+             accesion number
+            </div>
+        </div>
+        <div class="body border-gray">
+
+        </div>
+        <div class="footer border-green">
+
+        </div>
+
+        <div class="page-header  font-tahoma " style="text-align: center;  border-bottom:3px solid transparent!important; padding:20px 0.7in 15px!important">
+          <div class=" d-flex justify-content-between align-center">
+              <div class="d-flex  p-rel">
+                  <img src="../../global/htx-logo.png" style="height:115px;" class="" alt="">
+              </div>
+              <div class="d-flex flex-column  h100 ">
+                  <label for="" class="lb11 text-right pt-3">GF AM Flores Bldg. 5353 Mariano cor. Gen Luna</label>
+                  <label for="" class="lb11 text-right pt-3">St. Poblacion, Makati City, NCR, Philippines 1210</label>
+                  <label for="" class="lb11 text-right pt-3">main@healthrixmedical.com | +632 12345678</label> 
+                  <label for="" class="lb11 text-right text-bold pt-3">DOH Accreditation No. 13-0676-23-CL-2</label>
+              </div>
+          </div>
+           <div class="d-flex flex-column  ">
+              <div class="d-flex flex-column  font-tahoma">
+                  <div class="d-flex justify-content-between w100">
+                      <div class="d-flex w60 ">
+                          <label for="" class="lb11 w15  text-left">Name:</label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w75 text-left  lb11" value="<%= patientNo %>"> -->
+                          <label class="lb11 w85  text-bold text-left text-left "> <%= fullName %></label>
+                      </div>
+                      <div class="d-flex w40 text-right ">
+                          <label for="" class="lb11 w35  text-left">Laboratory No:</label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w78 lb11" id="createdOn"> -->
+                          <label class="lb11 w65 text-bold  text-left" > <%= labNo  %> </label>
+                      </div>
+                  </div>
+
+                  <div class="d-flex justify-content-between w100 pt-5">
+                        <div class="d-flex w60 ">
+                          <label for="" class="lb11 w15  text-left">PID:</label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w75 text-left  lb11" value="<%= patientNo %>"> -->
+                          <label class="lb11 w85  text-bold text-left text-left "> <%= patientNo %></label>
+                      </div>
+                      <div class="d-flex w40 ">
+                          <label for="" class="lb11 w35  text-left">Order Date:</label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w78 lb11" id="createdOn"> -->
+                          <label class="lb10 w65 text-bold  text-left" id="collectedDate"> </label>
+                      </div>
+                  </div>
+                  <div class="d-flex justify-content-between w100 pt-5">
+                      <div class="d-flex w60 ">
+                          <div class="d-flex w25">
+                              <label for="" class="lb11 w30 text-left">SEX:</label>
+                              <label class="lb11 w70  text-bold text-center "> <%= gender %></label>
+                          </div>
+                          <div class="d-flex w55">
+                              <label for="" class="lb11 w35 text-left">Birthdate:</label>
+                              <label class="lb11 w65  text-bold text-center  " id="birthdate"> </label>
+                          </div>
+                          <div class="d-flex w20">
+                              <label for="" class="lb11 w30 text-left">Age:</label>
+                              <label class="lb11 w70  text-bold text-center "> <%= ageYear %></label>
+                          </div>
+                         
+                      </div>
+                       <div class="d-flex w40 ">
+                          <label for="" class="lb11 w35  text-left">Received Date:</label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w78 lb11" id="createdOn"> -->
+                          <label class="lb10 w65 text-bold  text-left" id="receivedDate"> </label>
+                      </div>
+                  </div>
+                  <div class="d-flex justify-content-between w100 pt-5">
+                      <div class="d-flex w60 ">
+                          <label for="" class="lb11 w40  text-left">Requesting Physician: </label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w75 text-left  lb11" value="<%= patientNo %>"> -->
+                          <label class="lb11 w60  text-bold text-left text-left "><%= fullName %></label>
+                          
+                      </div>
+                     <div class="d-flex w40 ">
+                          <label for="" class="lb11 w35  text-left">Print Date:</label>
+                          <!-- <input type="text" class="text-bold inp-text-auto border-none w78 lb11" id="createdOn"> -->
+                          <label class="lb10 w65 text-bold  text-left" id="validatedDate"></label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="d-flex flex-column mb-20 pt-10">
+              <div class="d-flex justify-content-center  htx-header-title">
+                  <%  for(var i = 0; i < testResults.length; i++  ) { %>
+                      <label class="lb17 text-bold text-center p-5 text-white text-uppercase"><%= testResults[i].testGroupName %></label>
+                      <% break %>
+                  <% } %>
+              </div>
+              <div class="d-flex mt-10 border">
+                  <label class="lb12 text-bold text-center w30 p-3 border-right">TEST</label>
+                  <label class="lb12 text-bold text-center w25 p-3 border-right">RESULT</label>
+                  <label class="lb12 text-bold text-center w20 p-3 border-right">UNIT </label>
+                  <label class="lb12 text-bold text-center w25 p-3">REFERENCE RANGE</label>
+              </div>
+          </div>
+        </div>
+
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laboriosam animi odit dolorum, officiis aperiam fugiat tenetur explicabo obcaecati consequuntur reiciendis vitae, unde dicta sint ullam, similique nam culpa dolorem.
+   </div>
+</html>
